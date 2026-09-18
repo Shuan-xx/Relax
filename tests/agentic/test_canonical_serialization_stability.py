@@ -87,7 +87,9 @@ def test_serialization_state_hash_is_a_sha256_hex_digest() -> None:
     ("mutate", "expected_changed_field"),
     [
         pytest.param(
-            lambda m, t, k: ([{"role": "user", "content": "hi "}] + m[1:], t, k), "messages", id="trailing-space"
+            lambda m, t, k: ([{**m[0], "content": m[0]["content"] + " "}, *m[1:]], t, k),
+            "messages",
+            id="trailing-space",
         ),
         pytest.param(lambda m, t, k: (m, [], k), "tools", id="tools-dropped"),
         pytest.param(lambda m, t, k: (m, t, {"enable_thinking": False}), "template_kwargs", id="thinking-off"),
