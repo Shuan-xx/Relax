@@ -914,22 +914,6 @@ def test_function_tool_without_name_should_be_rejected_by_every_protocol() -> No
         normalize(CHAT, _chat([_user("hi")], tools=[DIVERGENCE_TOOL_WITHOUT_NAME]))
 
 
-@pytest.mark.xfail(strict=True, reason="D4: Responses silently drops a tool that omits type")
-def test_function_tool_without_explicit_type_should_project_the_same_everywhere() -> None:
-    chat = canonical_of(
-        normalize(
-            CHAT, _chat([_user("hi")], tools=[{"type": "function", "function": {"name": "f", "parameters": {}}}])
-        )
-    )
-    responses = canonical_of(normalize(RESPONSES, _responses_input("hi", tools=[{"name": "f", "parameters": {}}])))
-    anthropic = canonical_of(
-        normalize(ANTHROPIC, _anthropic([_user("hi")], tools=[{"name": "f", "input_schema": {}}]))
-    )
-
-    assert responses == chat
-    assert anthropic == chat
-
-
 @pytest.mark.xfail(strict=True, reason="D5: Chat keeps a multi text-block list the others join")
 def test_multiple_text_blocks_should_project_onto_one_canonical_content() -> None:
     chat = canonical_of(

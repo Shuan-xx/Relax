@@ -7,7 +7,10 @@
       "payload": {
         "model": "relax-test",
         "messages": [
-          { "role": "user", "content": "What is 2+2?" }
+          {
+            "role": "user",
+            "content": "What is 2+2?"
+          }
         ]
       }
     },
@@ -16,8 +19,14 @@
       "payload": {
         "model": "relax-test",
         "messages": [
-          { "role": "user", "content": "请解释：量子纠缠 🌀" },
-          { "role": "assistant", "content": "两个粒子共享一个态。" }
+          {
+            "role": "user",
+            "content": "请解释：量子纠缠 🌀"
+          },
+          {
+            "role": "assistant",
+            "content": "两个粒子共享一个态。"
+          }
         ]
       }
     },
@@ -26,9 +35,18 @@
       "payload": {
         "model": "relax-test",
         "messages": [
-          { "role": "system", "content": "You are terse." },
-          { "role": "system", "content": "Answer in one line." },
-          { "role": "user", "content": "hi" }
+          {
+            "role": "system",
+            "content": "You are terse."
+          },
+          {
+            "role": "system",
+            "content": "Answer in one line."
+          },
+          {
+            "role": "user",
+            "content": "hi"
+          }
         ]
       }
     },
@@ -37,8 +55,14 @@
       "payload": {
         "model": "relax-test",
         "messages": [
-          { "role": "user", "content": "hi" },
-          { "role": "assistant", "content": "hello" }
+          {
+            "role": "user",
+            "content": "hi"
+          },
+          {
+            "role": "assistant",
+            "content": "hello"
+          }
         ]
       }
     },
@@ -47,7 +71,10 @@
       "payload": {
         "model": "relax-test",
         "messages": [
-          { "role": "user", "content": "Run it" },
+          {
+            "role": "user",
+            "content": "Run it"
+          },
           {
             "role": "assistant",
             "content": null,
@@ -55,7 +82,10 @@
               {
                 "id": "call-1",
                 "type": "function",
-                "function": { "name": "run", "arguments": "{\"c\":\"d\",\"a\":\"b\"}" }
+                "function": {
+                  "name": "run",
+                  "arguments": "{\"c\":\"d\",\"a\":\"b\"}"
+                }
               }
             ]
           }
@@ -67,7 +97,10 @@
       "payload": {
         "model": "relax-test",
         "messages": [
-          { "role": "user", "content": "Run both" },
+          {
+            "role": "user",
+            "content": "Run both"
+          },
           {
             "role": "assistant",
             "content": null,
@@ -75,12 +108,18 @@
               {
                 "id": "call-1",
                 "type": "function",
-                "function": { "name": "run", "arguments": "{\"n\":1}" }
+                "function": {
+                  "name": "run",
+                  "arguments": "{\"n\":1}"
+                }
               },
               {
                 "id": "call-2",
                 "type": "function",
-                "function": { "name": "run", "arguments": "{\"n\":2}" }
+                "function": {
+                  "name": "run",
+                  "arguments": "{\"n\":2}"
+                }
               }
             ]
           }
@@ -92,7 +131,10 @@
       "payload": {
         "model": "relax-test",
         "messages": [
-          { "role": "user", "content": "Run it" },
+          {
+            "role": "user",
+            "content": "Run it"
+          },
           {
             "role": "assistant",
             "content": null,
@@ -100,11 +142,18 @@
               {
                 "id": "call-1",
                 "type": "function",
-                "function": { "name": "run", "arguments": "{}" }
+                "function": {
+                  "name": "run",
+                  "arguments": "{}"
+                }
               }
             ]
           },
-          { "role": "tool", "tool_call_id": "call-1", "content": "" }
+          {
+            "role": "tool",
+            "tool_call_id": "call-1",
+            "content": ""
+          }
         ]
       }
     },
@@ -113,8 +162,15 @@
       "payload": {
         "model": "relax-test",
         "messages": [
-          { "role": "user", "content": "hi" },
-          { "role": "assistant", "content": "", "reasoning_content": "thinking" }
+          {
+            "role": "user",
+            "content": "hi"
+          },
+          {
+            "role": "assistant",
+            "content": "",
+            "reasoning_content": "thinking"
+          }
         ]
       }
     },
@@ -123,8 +179,15 @@
       "payload": {
         "model": "relax-test",
         "messages": [
-          { "role": "user", "content": "hi" },
-          { "role": "assistant", "content": "answer", "reasoning_content": "because" }
+          {
+            "role": "user",
+            "content": "hi"
+          },
+          {
+            "role": "assistant",
+            "content": "answer",
+            "reasoning_content": "because"
+          }
         ]
       }
     },
@@ -136,8 +199,16 @@
           {
             "role": "user",
             "content": [
-              { "type": "text", "text": "Describe the chart." },
-              { "type": "image_url", "image_url": { "url": "https://example.invalid/chart.png" } }
+              {
+                "type": "text",
+                "text": "Describe the chart."
+              },
+              {
+                "type": "image_url",
+                "image_url": {
+                  "url": "https://example.invalid/chart.png"
+                }
+              }
             ]
           }
         ]
@@ -151,7 +222,12 @@
           {
             "role": "user",
             "content": [
-              { "type": "image_url", "image_url": { "url": "data:image/png;base64,iVBORw0KGgo=" } }
+              {
+                "type": "image_url",
+                "image_url": {
+                  "url": "data:image/png;base64,iVBORw0KGgo="
+                }
+              }
             ]
           }
         ]
@@ -165,9 +241,20 @@
           {
             "role": "user",
             "content": [
-              { "type": "text", "text": "Part one." },
-              { "type": "text", "text": "Part two." },
-              { "type": "image_url", "image_url": { "url": "https://example.invalid/chart.png" } }
+              {
+                "type": "text",
+                "text": "Part one."
+              },
+              {
+                "type": "text",
+                "text": "Part two."
+              },
+              {
+                "type": "image_url",
+                "image_url": {
+                  "url": "https://example.invalid/chart.png"
+                }
+              }
             ]
           }
         ]
@@ -177,7 +264,12 @@
       "case_id": "tools_with_description",
       "payload": {
         "model": "relax-test",
-        "messages": [{ "role": "user", "content": "hi" }],
+        "messages": [
+          {
+            "role": "user",
+            "content": "hi"
+          }
+        ],
         "tools": [
           {
             "type": "function",
@@ -186,8 +278,14 @@
               "description": "Return the weather.",
               "parameters": {
                 "type": "object",
-                "properties": { "city": { "type": "string" } },
-                "required": ["city"]
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "city"
+                ]
               }
             }
           }
@@ -198,13 +296,25 @@
       "case_id": "tools_without_description",
       "payload": {
         "model": "relax-test",
-        "messages": [{ "role": "user", "content": "hi" }],
+        "messages": [
+          {
+            "role": "user",
+            "content": "hi"
+          }
+        ],
         "tools": [
           {
             "type": "function",
             "function": {
               "name": "get_weather",
-              "parameters": { "type": "object", "properties": { "city": { "type": "string" } } }
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  }
+                }
+              }
             }
           }
         ]
@@ -214,16 +324,30 @@
       "case_id": "enable_thinking_true",
       "payload": {
         "model": "relax-test",
-        "messages": [{ "role": "user", "content": "hi" }],
-        "chat_template_kwargs": { "enable_thinking": true }
+        "messages": [
+          {
+            "role": "user",
+            "content": "hi"
+          }
+        ],
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        }
       }
     },
     {
       "case_id": "enable_thinking_false",
       "payload": {
         "model": "relax-test",
-        "messages": [{ "role": "user", "content": "hi" }],
-        "chat_template_kwargs": { "enable_thinking": false }
+        "messages": [
+          {
+            "role": "user",
+            "content": "hi"
+          }
+        ],
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        }
       }
     },
     {
@@ -231,8 +355,14 @@
       "payload": {
         "model": "relax-test",
         "messages": [
-          { "role": "system", "content": "Use tools." },
-          { "role": "user", "content": "Weather in Paris and Berlin?" },
+          {
+            "role": "system",
+            "content": "Use tools."
+          },
+          {
+            "role": "user",
+            "content": "Weather in Paris and Berlin?"
+          },
           {
             "role": "assistant",
             "content": "Checking both cities.",
@@ -256,9 +386,20 @@
               }
             ]
           },
-          { "role": "tool", "tool_call_id": "call-1", "content": "17C" },
-          { "role": "tool", "tool_call_id": "call-2", "content": "21C" },
-          { "role": "assistant", "content": "Paris 17C, Berlin 21C." }
+          {
+            "role": "tool",
+            "tool_call_id": "call-1",
+            "content": "17C"
+          },
+          {
+            "role": "tool",
+            "tool_call_id": "call-2",
+            "content": "21C"
+          },
+          {
+            "role": "assistant",
+            "content": "Paris 17C, Berlin 21C."
+          }
         ],
         "tools": [
           {
@@ -269,15 +410,23 @@
               "parameters": {
                 "type": "object",
                 "properties": {
-                  "city": { "type": "string" },
-                  "unit": { "type": "string" }
+                  "city": {
+                    "type": "string"
+                  },
+                  "unit": {
+                    "type": "string"
+                  }
                 },
-                "required": ["city"]
+                "required": [
+                  "city"
+                ]
               }
             }
           }
         ],
-        "chat_template_kwargs": { "enable_thinking": true }
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        }
       }
     }
   ]

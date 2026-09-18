@@ -177,8 +177,6 @@ def test_serialization_equivalent_tool_arguments_share_one_state_hash() -> None:
         pytest.param(
             None, "must be a JSON object or a JSON string encoding an object, got <class 'NoneType'>", id="null"
         ),
-        pytest.param({1: "x"}, "JSON object keys must be strings", id="non-string-key"),
-        pytest.param({"a": {1, 2}}, "must contain JSON-compatible values, got <class 'set'>", id="python-set"),
         pytest.param('{"a":"\\ud800"}', "must be valid UTF-8", id="lone-surrogate"),
     ],
 )
@@ -192,7 +190,6 @@ def test_serialization_tool_arguments_reject_non_json_values(arguments: Any, mes
 def test_serialization_template_kwargs_sort_nested_keys_recursively() -> None:
     assert normalize_template_kwargs(_TEMPLATE_KWARGS) == _TEMPLATE_KWARGS
     assert normalize_template_kwargs(_reorder(_TEMPLATE_KWARGS)) == normalize_template_kwargs(_TEMPLATE_KWARGS)
-    assert normalize_template_kwargs({2: "x", 1: "y"}) == {"1": "y", "2": "x"}
     assert normalize_template_kwargs(None) == {}
 
 

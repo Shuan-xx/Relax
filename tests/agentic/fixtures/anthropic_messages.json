@@ -7,7 +7,12 @@
       "payload": {
         "model": "relax-test",
         "max_tokens": 128,
-        "messages": [{ "role": "user", "content": "What is 2+2?" }]
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 2+2?"
+          }
+        ]
       }
     },
     {
@@ -16,8 +21,14 @@
         "model": "relax-test",
         "max_tokens": 128,
         "messages": [
-          { "role": "user", "content": "请解释：量子纠缠 🌀" },
-          { "role": "assistant", "content": "两个粒子共享一个态。" }
+          {
+            "role": "user",
+            "content": "请解释：量子纠缠 🌀"
+          },
+          {
+            "role": "assistant",
+            "content": "两个粒子共享一个态。"
+          }
         ]
       }
     },
@@ -26,8 +37,22 @@
       "payload": {
         "model": "relax-test",
         "max_tokens": 128,
-        "system": [{ "type": "text", "text": "You are terse." }, { "type": "text", "text": "Answer in one line." }],
-        "messages": [{ "role": "user", "content": "hi" }]
+        "system": [
+          {
+            "type": "text",
+            "text": "You are terse."
+          },
+          {
+            "type": "text",
+            "text": "Answer in one line."
+          }
+        ],
+        "messages": [
+          {
+            "role": "user",
+            "content": "hi"
+          }
+        ]
       }
     },
     {
@@ -36,8 +61,19 @@
         "model": "relax-test",
         "max_tokens": 128,
         "messages": [
-          { "role": "user", "content": "hi" },
-          { "role": "assistant", "content": [{ "type": "text", "text": "hello" }] }
+          {
+            "role": "user",
+            "content": "hi"
+          },
+          {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "hello"
+              }
+            ]
+          }
         ]
       }
     },
@@ -47,11 +83,22 @@
         "model": "relax-test",
         "max_tokens": 128,
         "messages": [
-          { "role": "user", "content": "Run it" },
+          {
+            "role": "user",
+            "content": "Run it"
+          },
           {
             "role": "assistant",
             "content": [
-              { "type": "tool_use", "id": "call-1", "name": "run", "input": { "c": "d", "a": "b" } }
+              {
+                "type": "tool_use",
+                "id": "call-1",
+                "name": "run",
+                "input": {
+                  "c": "d",
+                  "a": "b"
+                }
+              }
             ]
           }
         ]
@@ -63,12 +110,29 @@
         "model": "relax-test",
         "max_tokens": 128,
         "messages": [
-          { "role": "user", "content": "Run both" },
+          {
+            "role": "user",
+            "content": "Run both"
+          },
           {
             "role": "assistant",
             "content": [
-              { "type": "tool_use", "id": "call-1", "name": "run", "input": { "n": 1 } },
-              { "type": "tool_use", "id": "call-2", "name": "run", "input": { "n": 2 } }
+              {
+                "type": "tool_use",
+                "id": "call-1",
+                "name": "run",
+                "input": {
+                  "n": 1
+                }
+              },
+              {
+                "type": "tool_use",
+                "id": "call-2",
+                "name": "run",
+                "input": {
+                  "n": 2
+                }
+              }
             ]
           }
         ]
@@ -80,14 +144,30 @@
         "model": "relax-test",
         "max_tokens": 128,
         "messages": [
-          { "role": "user", "content": "Run it" },
+          {
+            "role": "user",
+            "content": "Run it"
+          },
           {
             "role": "assistant",
-            "content": [{ "type": "tool_use", "id": "call-1", "name": "run", "input": {} }]
+            "content": [
+              {
+                "type": "tool_use",
+                "id": "call-1",
+                "name": "run",
+                "input": {}
+              }
+            ]
           },
           {
             "role": "user",
-            "content": [{ "type": "tool_result", "tool_use_id": "call-1", "content": "" }]
+            "content": [
+              {
+                "type": "tool_result",
+                "tool_use_id": "call-1",
+                "content": ""
+              }
+            ]
           }
         ]
       }
@@ -98,10 +178,19 @@
         "model": "relax-test",
         "max_tokens": 128,
         "messages": [
-          { "role": "user", "content": "hi" },
+          {
+            "role": "user",
+            "content": "hi"
+          },
           {
             "role": "assistant",
-            "content": [{ "type": "thinking", "thinking": "thinking", "signature": "sig" }]
+            "content": [
+              {
+                "type": "thinking",
+                "thinking": "thinking",
+                "signature": "sig"
+              }
+            ]
           }
         ]
       }
@@ -112,12 +201,21 @@
         "model": "relax-test",
         "max_tokens": 128,
         "messages": [
-          { "role": "user", "content": "hi" },
+          {
+            "role": "user",
+            "content": "hi"
+          },
           {
             "role": "assistant",
             "content": [
-              { "type": "thinking", "thinking": "because" },
-              { "type": "text", "text": "answer" }
+              {
+                "type": "thinking",
+                "thinking": "because"
+              },
+              {
+                "type": "text",
+                "text": "answer"
+              }
             ]
           }
         ]
@@ -132,8 +230,17 @@
           {
             "role": "user",
             "content": [
-              { "type": "text", "text": "Describe the chart." },
-              { "type": "image", "source": { "type": "url", "url": "https://example.invalid/chart.png" } }
+              {
+                "type": "text",
+                "text": "Describe the chart."
+              },
+              {
+                "type": "image",
+                "source": {
+                  "type": "url",
+                  "url": "https://example.invalid/chart.png"
+                }
+              }
             ]
           }
         ]
@@ -150,7 +257,11 @@
             "content": [
               {
                 "type": "image",
-                "source": { "type": "base64", "media_type": "image/png", "data": "iVBORw0KGgo=" }
+                "source": {
+                  "type": "base64",
+                  "media_type": "image/png",
+                  "data": "iVBORw0KGgo="
+                }
               }
             ]
           }
@@ -166,9 +277,21 @@
           {
             "role": "user",
             "content": [
-              { "type": "text", "text": "Part one." },
-              { "type": "text", "text": "Part two." },
-              { "type": "image", "source": { "type": "url", "url": "https://example.invalid/chart.png" } }
+              {
+                "type": "text",
+                "text": "Part one."
+              },
+              {
+                "type": "text",
+                "text": "Part two."
+              },
+              {
+                "type": "image",
+                "source": {
+                  "type": "url",
+                  "url": "https://example.invalid/chart.png"
+                }
+              }
             ]
           }
         ]
@@ -179,15 +302,26 @@
       "payload": {
         "model": "relax-test",
         "max_tokens": 128,
-        "messages": [{ "role": "user", "content": "hi" }],
+        "messages": [
+          {
+            "role": "user",
+            "content": "hi"
+          }
+        ],
         "tools": [
           {
             "name": "get_weather",
             "description": "Return the weather.",
             "input_schema": {
               "type": "object",
-              "properties": { "city": { "type": "string" } },
-              "required": ["city"]
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ]
             }
           }
         ]
@@ -198,11 +332,23 @@
       "payload": {
         "model": "relax-test",
         "max_tokens": 128,
-        "messages": [{ "role": "user", "content": "hi" }],
+        "messages": [
+          {
+            "role": "user",
+            "content": "hi"
+          }
+        ],
         "tools": [
           {
             "name": "get_weather",
-            "input_schema": { "type": "object", "properties": { "city": { "type": "string" } } }
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              }
+            }
           }
         ]
       }
@@ -212,8 +358,16 @@
       "payload": {
         "model": "relax-test",
         "max_tokens": 128,
-        "thinking": { "type": "enabled", "budget_tokens": 64 },
-        "messages": [{ "role": "user", "content": "hi" }]
+        "thinking": {
+          "type": "enabled",
+          "budget_tokens": 64
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "hi"
+          }
+        ]
       }
     },
     {
@@ -221,8 +375,15 @@
       "payload": {
         "model": "relax-test",
         "max_tokens": 128,
-        "thinking": { "type": "disabled" },
-        "messages": [{ "role": "user", "content": "hi" }]
+        "thinking": {
+          "type": "disabled"
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "hi"
+          }
+        ]
       }
     },
     {
@@ -231,31 +392,68 @@
         "model": "relax-test",
         "max_tokens": 128,
         "system": "Use tools.",
-        "thinking": { "type": "enabled" },
+        "thinking": {
+          "type": "enabled"
+        },
         "messages": [
-          { "role": "user", "content": "Weather in Paris and Berlin?" },
+          {
+            "role": "user",
+            "content": "Weather in Paris and Berlin?"
+          },
           {
             "role": "assistant",
             "content": [
-              { "type": "thinking", "thinking": "Two lookups are independent." },
-              { "type": "text", "text": "Checking both cities." },
+              {
+                "type": "thinking",
+                "thinking": "Two lookups are independent."
+              },
+              {
+                "type": "text",
+                "text": "Checking both cities."
+              },
               {
                 "type": "tool_use",
                 "id": "call-1",
                 "name": "get_weather",
-                "input": { "unit": "celsius", "city": "Paris" }
+                "input": {
+                  "unit": "celsius",
+                  "city": "Paris"
+                }
               },
-              { "type": "tool_use", "id": "call-2", "name": "get_weather", "input": { "city": "Berlin" } }
+              {
+                "type": "tool_use",
+                "id": "call-2",
+                "name": "get_weather",
+                "input": {
+                  "city": "Berlin"
+                }
+              }
             ]
           },
           {
             "role": "user",
             "content": [
-              { "type": "tool_result", "tool_use_id": "call-1", "content": "17C" },
-              { "type": "tool_result", "tool_use_id": "call-2", "content": "21C" }
+              {
+                "type": "tool_result",
+                "tool_use_id": "call-1",
+                "content": "17C"
+              },
+              {
+                "type": "tool_result",
+                "tool_use_id": "call-2",
+                "content": "21C"
+              }
             ]
           },
-          { "role": "assistant", "content": [{ "type": "text", "text": "Paris 17C, Berlin 21C." }] }
+          {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "Paris 17C, Berlin 21C."
+              }
+            ]
+          }
         ],
         "tools": [
           {
@@ -263,8 +461,17 @@
             "description": "Return the weather.",
             "input_schema": {
               "type": "object",
-              "properties": { "city": { "type": "string" }, "unit": { "type": "string" } },
-              "required": ["city"]
+              "properties": {
+                "city": {
+                  "type": "string"
+                },
+                "unit": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ]
             }
           }
         ]
